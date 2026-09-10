@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hold, resolved</title>
+  <link rel="stylesheet" href="hold.css" />
+  <style>
+    .pair { display: grid; gap: 32px; }
+    @media (min-width: 900px) { .pair { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="wordmark">Hold</p>
+    <div class="pair">
+      <div class="layout">
+        <aside class="slips" aria-label="Overnight work already complete">
+          <p class="slip"><span class="mark">Filed</span> Cedar Supply packing note</p>
+          <p class="slip"><span class="mark">Logged</span> bank CSV, no unmatched debit</p>
+        </aside>
+        <section class="envelope" aria-labelledby="approved-line">
+          <p class="amount" aria-hidden="true">$412</p>
+          <h1 class="pay-line" id="approved-line">Pay $412 to Cedar Supply</h1>
+          <p class="meta">Invoice FN-1042</p>
+          <p class="status" aria-live="polite">Resumed</p>
+          <p class="meta">Mocked pay to Cedar Supply, $412.</p>
+          <span class="mocked">Mocked</span>
+        </section>
+      </div>
+      <div class="layout">
+        <aside class="slips" aria-label="Overnight work already complete">
+          <p class="slip"><span class="mark">Filed</span> Cedar Supply packing note</p>
+          <p class="slip"><span class="mark">Logged</span> bank CSV, no unmatched debit</p>
+        </aside>
+        <section class="envelope" aria-labelledby="denied-line">
+          <p class="amount" aria-hidden="true">$412</p>
+          <h1 class="pay-line" id="denied-line">Pay $412 to Cedar Supply</h1>
+          <p class="meta">Invoice FN-1042</p>
+          <p class="status is-denied" aria-live="polite">Payment tool cancelled</p>
+          <span class="mocked">Mocked</span>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

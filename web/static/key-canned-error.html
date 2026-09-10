@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hold, canned and error</title>
+  <link rel="stylesheet" href="hold.css" />
+  <style>
+    .stack { display: grid; gap: 40px; }
+    @media (min-width: 900px) { .stack { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="wordmark">Hold</p>
+    <div class="banner" role="status">CANNED PATH</div>
+    <div class="stack">
+      <div class="layout">
+        <aside class="slips" aria-label="Overnight work already complete">
+          <p class="slip"><span class="mark">Filed</span> Cedar Supply packing note</p>
+          <p class="slip"><span class="mark">Logged</span> bank CSV, no unmatched debit</p>
+        </aside>
+        <section class="envelope" aria-labelledby="canned-line">
+          <p class="amount" aria-hidden="true">$412</p>
+          <h1 class="pay-line" id="canned-line">Pay $412 to Cedar Supply</h1>
+          <p class="meta">Invoice FN-1042</p>
+          <p class="status is-canned" aria-live="polite">Canned Path</p>
+          <div class="actions">
+            <button class="btn btn-approve" type="button">Approve</button>
+            <button class="btn btn-deny" type="button">Deny</button>
+          </div>
+          <button class="btn-text" type="button" aria-pressed="false">Trust this supplier</button>
+          <span class="mocked">Mocked</span>
+          <details class="pause">
+            <summary>How this pause works</summary>
+            <p>This is a pre-recorded fixture.</p>
+          </details>
+        </section>
+      </div>
+      <div>
+        <p class="restoring" role="status">Restoring the waiting decision…</p>
+        <div class="skeleton" aria-hidden="true"></div>
+        <section class="error" style="margin-top: 32px" role="alert" aria-labelledby="err">
+          <h1 id="err">We could not reach the live agent.</h1>
+          <p>Retry, or use the canned path. This path is not running on AgentCore.</p>
+          <div class="actions">
+            <button class="btn btn-retry" type="button">Retry</button>
+            <button class="btn btn-deny" type="button">Use canned path</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

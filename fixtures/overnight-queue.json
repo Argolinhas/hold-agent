@@ -1,0 +1,24 @@
+{
+  "silent": [
+    {
+      "mark": "FILED",
+      "line": "Cedar Supply packing note"
+    },
+    {
+      "mark": "LOGGED",
+      "line": "bank CSV, no unmatched debit"
+    }
+  ],
+  "reason": {
+    "amount": "$412",
+    "amount_cents": 41200,
+    "supplier": "Cedar Supply",
+    "supplierId": "cedar-supply",
+    "invoice": "FN-1042"
+  },
+  "interrupts": [
+    {
+      "id": "canned-fn-1042"
+    }
+  ]
+}

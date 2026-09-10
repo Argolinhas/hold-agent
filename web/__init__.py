@@ -1,0 +1,1 @@
+"""Public Decision Card adapter."""
