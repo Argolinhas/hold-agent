@@ -12,33 +12,28 @@ Open `/` in a browser. There is no account wall.
 
 You should see two silent completions (a packing note filed, a bank CSV logged) and one waiting pay: $412 to Cedar Supply, invoice FN-1042. The card offers Approve, Deny, and Trust this supplier.
 
-Approve resumes a native Strands interrupt on `submit_payment`. Deny cancels that tool so nothing is sent.
-
 ## Run locally
 
-The HTTP adapter is not wired yet, so open the Decision Card as static files:
-
-- Paused: `web/static/key-paused.html`
-- Approved or Denied: `web/static/key-resolved.html`
-- Canned Path and error: `web/static/key-canned-error.html`
-
-Python 3.12 (3.10 or newer):
+Python 3.12 (3.10 or newer). Install from the lockfile and start the adapter on port 8080:
 
 ```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -e .
-copy env.example .env
+uv sync --group dev
+uv run uvicorn web.app:app --host 127.0.0.1 --port 8080
 ```
 
-Once the adapter exists, `/` will listen on port 8080. You can force the labeled fixture with `/?fixture=overnight`.
+Then open http://127.0.0.1:8080/. The paused card's CSS loads through the adapter at http://127.0.0.1:8080/.
+
+Static Decision Card files remain a fallback if you open them without the adapter:
+
+- Approved or Denied: `web/static/key-resolved.html`
+- Canned Path and error: `web/static/key-canned-error.html`
 
 ## Demo truth
 
 | Kind | What |
 |---|---|
-| Built | Decision Card statics (paused, resolved, canned/error) |
-| Not yet | FastAPI `/` adapter, Strands Graph, native interrupt on `submit_payment` |
+| Built | FastAPI `/` adapter, Decision Card statics (paused, resolved, canned/error) |
+| Not yet | Strands Graph, native interrupt on `submit_payment` |
 | Mocked | Payment rail and outbound mail, labeled Mocked on the card |
 | Synthetic | Ana, Cedar Supply, FN-1042, $412 |
 | Hardcoded | Overnight fixture JSON used for Canned Path |

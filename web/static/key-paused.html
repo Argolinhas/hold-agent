@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hold</title>
-  <link rel="stylesheet" href="hold.css" />
+  <link rel="stylesheet" href="/static/hold.css" />
 </head>
 <body>
   <main class="page">
@@ -12,13 +12,13 @@
     <div class="layout">
       <aside class="slips" aria-label="Overnight work already complete">
         <p class="slip"><span class="mark">Filed</span> Cedar Supply packing note</p>
-        <p class="slip"><span class="mark">Logged</span> bank CSV, no unmatched debit</p>
+        <p class="slip"><span class="mark">Logged</span> bank CSV — no unmatched debit</p>
       </aside>
       <section class="envelope" aria-labelledby="pay-line">
         <p class="amount" aria-hidden="true">$412</p>
         <h1 class="pay-line" id="pay-line">Pay $412 to Cedar Supply</h1>
         <p class="meta">Invoice FN-1042</p>
-        <p class="status" aria-live="polite">Paused on a native interrupt</p>
+        <p class="status" aria-live="polite">Paused — native interrupt</p>
         <div class="actions">
           <button class="btn btn-approve" type="button">Approve</button>
           <button class="btn btn-deny" type="button">Deny</button>
@@ -27,7 +27,7 @@
         <span class="mocked">Mocked</span>
         <details class="pause">
           <summary>How this pause works</summary>
-          <p>The agent stopped with stop_reason=interrupt and waits here until you resume.</p>
+          <p>stop_reason=interrupt, then resume.</p>
         </details>
       </section>
     </div>
